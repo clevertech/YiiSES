@@ -14,7 +14,7 @@ Even though there was some good effort to make it easy to install, its configura
 
 Within the code you will find two types of configurations, one to be used with [YiiBoilerplate](http://github.com/clevertech/YiiBoilerplate) project structure (default), and the other when we install the module on a Yii's default application structure.
 
-The following instructions are to install the nmodule on a Yii's default application structure. 
+The following instructions are to install the module on a Yii's default application structure.
 
 #### Configuration
 * Create your web application `./yiic webapp <folder>`
