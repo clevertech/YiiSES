@@ -19,8 +19,8 @@ The following instructions are to install the module on a Yii's default applicat
 #### Configuration
 * Create your web application `./yiic webapp <folder>`
 * Create your **modules** folder under **protected** and unpack the module there
-* Place **commands\CampaignCommand.php** on your commands directory. 
-* Configure your **config\main.php** and **config\console.php** configuration files (make sure your db is setup correctly -*migrations wont work on other db than mySQL*):  
+* Place **commands\CampaignCommand.php** on your commands directory and **ses\migrations\..** on the migrations directory. 
+* Configure your **config\main.php** and **config\console.php** configuration files (make sure your db is setup correctly -*migrations will only work on mySQL db*):  
 
 	``` 
 	// console.php
@@ -45,6 +45,12 @@ The following instructions are to install the module on a Yii's default applicat
 	
 	// main.php
 	…
+	'modules' => array(
+		'ses'=>array(
+			'password'=>'clevertech',
+		),
+	),
+	…	
 	// urlManager must be the same configuration as on main.php
 	'urlManager' => array(
 		// remember to have your .htaccess setup correctly
@@ -56,7 +62,12 @@ The following instructions are to install the module on a Yii's default applicat
 			'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 			'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 		),	
-	),
+	),	
+	…
+	'params'=> array(
+		'ses.aws.key'=>'',
+	…
+	
 	...
 	```
 * Setup required parameters on your configuration files (must be shared among console.php and main.php):
